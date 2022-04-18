@@ -21,17 +21,18 @@ describe("For each word in array get words length", () => {
         const invalidInput3 = undefined;
         const invalidInput4 = true;
         const invalidInput5 = {name: '', age: ''}
-        
+
         //act & assert
         expect(() => getWordLengths(invalidInput1)).toThrow("error");
         expect(() => getWordLengths(invalidInput2)).toThrow("error");
         expect(() => getWordLengths(invalidInput3)).toThrow("error");
         expect(() => getWordLengths(invalidInput4)).toThrow("error");
         expect(() => getWordLengths(invalidInput5)).toThrow("error");
-    })
+    });
 
     it("If function getWordLengths doesn't recive parameters, it will throw an error", () => {
         //act & assert
         expect(() => getWordLengths()).toThrow("error");
-    })
+    });
+    
 });

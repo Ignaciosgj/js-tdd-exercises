@@ -15,10 +15,18 @@ describe("Add all numbers", () => {
 
     it("if numbers is not an array it will throw an error", () => {
         //arrange
-        const numbers = 1;
+        const invalidInput1 = 1;
+        const invalidInput2 = '';
+        const invalidInput3 = undefined;
+        const invalidInput4 = true;
+        const invalidInput5 = {name: '', age: ''}
 
         //act & assert
-        expect(() => addAllnumbers(numbers)).toThrow("error");
+        expect(() => addAllnumbers(invalidInput1)).toThrow("error");
+        expect(() => addAllnumbers(invalidInput2)).toThrow("error");
+        expect(() => addAllnumbers(invalidInput3)).toThrow("error");
+        expect(() => addAllnumbers(invalidInput4)).toThrow("error");
+        expect(() => addAllnumbers(invalidInput5)).toThrow("error");
 
     });
 
