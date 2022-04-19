@@ -1,16 +1,12 @@
-var removeVowels = require("../02-remove-vowels/remove-vowels");
+const { removeVowels } = require("../02-remove-vowels/remove-vowels");
 
 function removeVowelsForWords(words) {
-  var result = words.map(function(word) {
-    return removeVowels(word);
-  });
-
+  if (!Array.isArray(words)) throw new Error("error")
+  const result = words.map(word => removeVowels(word));
   return result;
 }
 
-module.exports = removeVowelsForWords;
+module.exports = {
+  removeVowelsForWords
+}
 
-/*
-    input: ["Irina", "Etza", "Daniel"]
-    expected output: ["rn", "tz", "Dnl"]
-*/
