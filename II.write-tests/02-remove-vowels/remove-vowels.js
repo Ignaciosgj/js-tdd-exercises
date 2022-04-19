@@ -1,7 +1,7 @@
 function removeVowels(word) {
   const characters = word.split("");
   var result = [];
-  const vowels = ['a', 'e', 'i', 'o', 'u']
+  const vowels = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U']
 
   characters.forEach(character => {
     if (!vowels.includes(character)) {
