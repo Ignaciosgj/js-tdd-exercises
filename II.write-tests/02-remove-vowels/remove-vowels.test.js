@@ -26,15 +26,31 @@ describe("Recive a word and return the word without vowels", () => {
     expect(result).toEqual(expected);
   });
 
-  it("for the word 'aeiou' it will return '-----'", () => {
+  it("for the word 'aeiouAEIOU' it will return '----------'", () => {
     //arrange
-    const word = 'aeiou';
-    const expected = '-----';
+    const word = 'aeiouAEIOU';
+    const expected = '----------';
 
     //act 
     const result = removeVowels(word);
 
     //assert
     expect(result).toEqual(expected);
+  });
+
+  it("if function removeVowels doesn't recive a string it will throw an error", () => {
+    //arrange
+    const invalidInput1 = 1;
+    const invalidInput2 = undefined;
+    const invalidInput3 = true;
+    const invalidInput4 = {name: 'nombre'};
+    const invalidInput5 = ['', '', '']
+    
+    //act & assert
+    expect(() => removeVowels(invalidInput1)).toThrow("error");
+    expect(() => removeVowels(invalidInput2)).toThrow("error");
+    expect(() => removeVowels(invalidInput3)).toThrow("error");
+    expect(() => removeVowels(invalidInput4)).toThrow("error");
+    expect(() => removeVowels(invalidInput5)).toThrow("error");
   });
 });

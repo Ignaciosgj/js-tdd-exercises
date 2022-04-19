@@ -1,4 +1,5 @@
 function removeVowels(word) {
+  if (typeof(word) !== "string") throw new Error("error");
   const characters = word.split("");
   var result = [];
   const vowels = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U']
