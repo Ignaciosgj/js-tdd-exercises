@@ -42,4 +42,9 @@ describe("Recive an array of names and return array of 'Hello name'", () => {
     expect(() => greetPeople(invalidInput4)).toThrow("error");
     expect(() => greetPeople(invalidInput5)).toThrow("error");
   });
+
+  it("if function greetPeople doesn't recive any parameters it will throw an error", () => {
+    //act & assert
+    expect(() => greetPeople()).toThrow("error");
+  })
 })

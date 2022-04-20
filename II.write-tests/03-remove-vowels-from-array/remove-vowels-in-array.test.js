@@ -13,7 +13,24 @@ describe("remove vowels from all words in array", () => {
     expect(result).toEqual(expected);
 
   });
-  it("if function removeVowerlsForWords doesn't recive an array of strings it will throw an error", () => {
+
+  it("if function removeVolwesForWords doesn't recive an array it will throw an error", () => {
+    //arrange
+    const invalidInput1 = 11;
+    const invalidInput2 = '';
+    const invalidInput3 = undefined;
+    const invalidInput4 = true;
+    const invalidInput5 = {name: 'nombre'};
+
+    //act & assert
+    expect(() => removeVowelsForWords(invalidInput1)).toThrow("error");
+    expect(() => removeVowelsForWords(invalidInput2)).toThrow("error");
+    expect(() => removeVowelsForWords(invalidInput3)).toThrow("error");
+    expect(() => removeVowelsForWords(invalidInput4)).toThrow("error");
+    expect(() => removeVowelsForWords(invalidInput5)).toThrow("error");
+  });
+
+  it("if function removeVowelsForWords doesn't recive an array of strings it will throw an error", () => {
     //arrange
     const invalidInput1 = 11;
     const invalidInput2 = [11];
@@ -38,6 +55,9 @@ describe("remove vowels from all words in array", () => {
     expect(() => removeVowelsForWords(invalidInput9)).toThrow("error");
   });
 
-
+  it("if function removeVowelsForWords doesn't recive any params it will throw an error", () => {
+    //act & assert
+    expect(() => removeVowelsForWords()).toThrow("error");
+  })
 });
 
