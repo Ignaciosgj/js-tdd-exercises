@@ -34,6 +34,8 @@ describe("Get numbers larger than 10", () => {
     expect(() => largerThanTen(invalidInput5)).toThrow("error");
     expect(() => largerThanTen(invalidInput6)).toThrow("error");
     expect(() => largerThanTen(invalidInput7)).toThrow("error");
+    expect(() => largerThanTen(invalidInput8)).toThrow("error");
+    expect(() => largerThanTen(invalidInput9)).toThrow("error");
   });
 });
 
