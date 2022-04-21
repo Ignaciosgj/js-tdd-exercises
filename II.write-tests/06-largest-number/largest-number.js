@@ -1,11 +1,13 @@
-function getLargestNumber(array) {
-  var largestNumber;
-  for (var i = 0; i < array.length - 1; i++) {
-    if (array[i] > array[i + 1]) {
-      largestNumber = array[i];
-    }
-  }
-  return largestNumber;
+const getLargestNumber = (numbers) => {
+  if (!Array.isArray(numbers)) throw new Error("error");
+  numbers.map(number => {
+    if(typeof(number) !== 'number') throw new Error("error");
+  })
+  const newArray = [...numbers];
+  const orderedArray = newArray.sort((x,y) => x - y);
+  return orderedArray[orderedArray.length - 1];
 }
 
-module.exports = getLargestNumber;
+module.exports = {
+  getLargestNumber
+}

@@ -53,4 +53,8 @@ describe("Recive a word and return the word without vowels", () => {
     expect(() => removeVowels(invalidInput4)).toThrow("error");
     expect(() => removeVowels(invalidInput5)).toThrow("error");
   });
+
+  it("if function removeVowels doesn't recive any params it will throw an error", () => {
+    expect(() => removeVowels()).toThrow("error");
+  })
 });

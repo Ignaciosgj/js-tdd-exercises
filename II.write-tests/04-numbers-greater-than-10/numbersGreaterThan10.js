@@ -3,8 +3,9 @@ const largerThanTen = (numbers) => {
   return numbers.filter(number => {
     if (typeof(number) !== 'number') throw new Error("error")
     return number > 10
-  })
+  });
 }
+
 module.exports = {
   largerThanTen
 }

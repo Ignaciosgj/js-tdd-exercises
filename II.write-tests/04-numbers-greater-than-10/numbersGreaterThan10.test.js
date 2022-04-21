@@ -14,6 +14,22 @@ describe("Get numbers larger than 10", () => {
 
   });
 
+  it("if function largerThanTen doesn't recive an array it will throw an error", () => {
+    //arrange
+    const invalidInput1 = 11;
+    const invalidInput2 = '';
+    const invalidInput3 = undefined;
+    const invalidInput4 = true;
+    const invalidInput5 = {name: 'nombre'}
+
+    //act & assert
+    expect(() => largerThanTen(invalidInput1)).toThrow("error");
+    expect(() => largerThanTen(invalidInput2)).toThrow("error");
+    expect(() => largerThanTen(invalidInput3)).toThrow("error");
+    expect(() => largerThanTen(invalidInput4)).toThrow("error");
+    expect(() => largerThanTen(invalidInput5)).toThrow("error");
+  });
+
   it("if function largerThanTen doesn't recive an array of numbers it will throw an error", () => {
     //arrange
     const invalidInput1 = 11;
@@ -37,6 +53,11 @@ describe("Get numbers larger than 10", () => {
     expect(() => largerThanTen(invalidInput8)).toThrow("error");
     expect(() => largerThanTen(invalidInput9)).toThrow("error");
   });
+
+  it("if function largerThanTen doesn't recive any params it will throw an error", () => {
+    //act & assert
+    expect(() => largerThanTen()).toThrow("error");
+  })
 });
 
 // input: [4, 10, 32, 9, 21];

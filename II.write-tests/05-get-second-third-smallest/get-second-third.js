@@ -1,7 +1,13 @@
-module.exports = function(array) {
-  const newArray = array.slice();
-  newArray.sort(function(x, y) {
-    return x - y;
+const getSecondThird = (numbers) => {
+  if (!Array.isArray(numbers)) throw new Error("error");
+  numbers.map(number => {
+    if (typeof(number) !== 'number') throw new Error("error");
   });
-  return [newArray[1], newArray[2]];
-};
+  const newArray = [...numbers];
+  const orderedArray = newArray.sort((x,y) => x - y);
+  return orderedArray.slice(1,3);
+}
+
+module.exports = {
+  getSecondThird
+}
