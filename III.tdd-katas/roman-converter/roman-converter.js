@@ -21,7 +21,7 @@ const romanConverter = (number) => {
     I: 1
   }
 
-  for (let i in roman) {
+  for (let i of Object.keys(roman)) {
     relative = Math.floor(number / roman[i]);
     number -= relative * roman[i];
     output += i.repeat(relative);
@@ -33,9 +33,3 @@ const romanConverter = (number) => {
 module.exports = {
   romanConverter
 }
-
-
-3500
-500
-
-
